@@ -8,19 +8,14 @@ require APPPATH . 'libraries/tank_auth.php';
  * @author John.Wright
  */
 class Tank_auth_groups extends Tank_auth {
-    //put your code here
     
     function __construct()
     {
-			/**
-			 *	Run parent constructor to setup everything normally
-			 */
+			
+			//Run parent constructor to setup everything normally
             parent::__construct();
 
-			/**
-			 *  Load the groups extension model in place of 'users'
-			 *        
-			 */
+			//Load the groups extension model in place of 'users'
             $this->ci->load->model('tank_auth/ta_groups_users','users');
     }
     
@@ -56,14 +51,14 @@ class Tank_auth_groups extends Tank_auth {
      */
     function login($login, $password, $remember, $login_by_username, $login_by_email)
     {
-        $loggedIn = parent::login($login, $password, $remember, $login_by_username, $login_by_email);
+			$loggedIn = parent::login($login, $password, $remember, $login_by_username, $login_by_email);
 
-        if($loggedIn) 
-        {
-            $user = $this->ci->users->get_user_by_username($this->get_username());
-            $this->ci->session->set_userdata(array('group_id'	=> $user->group_id));
-        }
-                
-        return $loggedIn;
+			if($loggedIn) 
+			{
+				$user = $this->ci->users->get_user_by_username($this->get_username());
+				$this->ci->session->set_userdata(array('group_id'	=> $user->group_id));
+			}
+					
+			return $loggedIn;
     }
 }

@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 require APPPATH . 'models/tank_auth/users.php';
 /**
@@ -24,5 +24,3 @@ class TA_Groups_Users extends Users {
             return $this->db->affected_rows() > 0;
     }
 }
-
-?>
