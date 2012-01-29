@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
 require APPPATH . 'libraries/tank_auth.php';
 
