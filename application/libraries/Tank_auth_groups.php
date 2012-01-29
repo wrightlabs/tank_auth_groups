@@ -21,7 +21,7 @@ class Tank_auth_groups extends Tank_auth {
     /**
      * Check if logged in user is a group member of the given group id
      *
-     * @param	int
+     * @param	string
      * @return	bool
      */
     function is_group_member($group_id)
@@ -36,7 +36,7 @@ class Tank_auth_groups extends Tank_auth {
      */
     function is_admin()
     {
-		return $this->ci->session->userdata('group_id') === 100;
+		return $this->ci->session->userdata('group_id') === '100';
     }
     
     /**
