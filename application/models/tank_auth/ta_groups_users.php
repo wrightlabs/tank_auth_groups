@@ -17,10 +17,10 @@ class TA_Groups_Users extends Users {
      */
     function set_group_id($user_id, $group_id)
     {
-            $this->db->set('group_id', $group_id);
-            $this->db->where('id', $user_id);
+		$this->db->set('group_id', $group_id);
+		$this->db->where('id', $user_id);
 
-            $this->db->update($this->table_name);
-            return $this->db->affected_rows() > 0;
+		$this->db->update($this->table_name);
+		return $this->db->affected_rows() > 0;
     }
 }

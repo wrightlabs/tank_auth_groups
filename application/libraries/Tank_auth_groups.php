@@ -11,12 +11,11 @@ class Tank_auth_groups extends Tank_auth {
     
     function __construct()
     {
-			
-			//Run parent constructor to setup everything normally
-            parent::__construct();
+		//Run parent constructor to setup everything normally
+		parent::__construct();
 
-			//Load the groups extension model in place of 'users'
-            $this->ci->load->model('tank_auth/ta_groups_users','users');
+		//Load the groups extension model in place of 'users'
+		$this->ci->load->model('tank_auth/ta_groups_users','users');
     }
     
     /**
@@ -27,7 +26,7 @@ class Tank_auth_groups extends Tank_auth {
      */
     function is_group_member($group_id)
     {
-            return $this->ci->session->userdata('group_id') === $group_id;
+		return $this->ci->session->userdata('group_id') === $group_id;
     }
     
     /**
@@ -37,7 +36,7 @@ class Tank_auth_groups extends Tank_auth {
      */
     function is_admin()
     {
-            return $this->ci->session->userdata('group_id') === 100;
+		return $this->ci->session->userdata('group_id') === 100;
     }
     
     /**
@@ -51,14 +50,14 @@ class Tank_auth_groups extends Tank_auth {
      */
     function login($login, $password, $remember, $login_by_username, $login_by_email)
     {
-			$loggedIn = parent::login($login, $password, $remember, $login_by_username, $login_by_email);
+		$loggedIn = parent::login($login, $password, $remember, $login_by_username, $login_by_email);
 
-			if($loggedIn) 
-			{
-				$user = $this->ci->users->get_user_by_username($this->get_username());
-				$this->ci->session->set_userdata(array('group_id'	=> $user->group_id));
-			}
-					
-			return $loggedIn;
+		if($loggedIn) 
+		{
+			$user = $this->ci->users->get_user_by_username($this->get_username());
+			$this->ci->session->set_userdata(array('group_id'	=> $user->group_id));
+		}
+				
+		return $loggedIn;
     }
 }
