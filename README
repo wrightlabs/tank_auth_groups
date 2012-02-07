@@ -1,0 +1,14 @@
+INSTALLATION
+
+1. Copy the contents into your CodeIgniter 2.1.0 (with Tank Auth 1.0.9 installed) directory.
+
+2. Run the 'add-group_id-to-users.sql' file/code in your database (MySQL)
+
+3. Replace all occurances of "$this->load->library('tank_auth');" 
+  with "$this->load->library('tank_auth_groups','','tank_auth');"
+
+Now you can use the extra tank_auth_groups functions like this..
+
+$this->tank_auth->is_admin()
+
+NOTE: The default admin group_id is 100 and the default user group_id is 300.
