@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-require APPPATH . 'libraries/Tank_auth.php';
+require 'Tank_auth.php';
 
 /**
  * Extends the Tank Auth library with minimal support for groups
