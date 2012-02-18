@@ -7,6 +7,10 @@
  */
 class TA_Groups_Users extends Users {
     
+    //may be issues if you use table name prefix in config... hasn't been tested
+    //see parent constructor.
+    protected $table_name	= 'users';  // user accounts
+    
     function __construct()
     {
         	parent::__construct();
