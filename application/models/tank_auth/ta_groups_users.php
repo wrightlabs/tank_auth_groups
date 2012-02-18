@@ -1,6 +1,5 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-require APPPATH . 'models/tank_auth/users.php';
 /**
  * Extends the Tank Auth Users model with minimal support for groups
  *
