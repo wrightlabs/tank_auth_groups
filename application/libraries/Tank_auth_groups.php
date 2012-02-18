@@ -15,7 +15,8 @@ class Tank_auth_groups extends Tank_auth {
 		parent::__construct();
 
 		//Load the groups extension model in place of 'users'
-		$this->ci->load->model('tank_auth/ta_groups_users','users');
+		$this->ci->load->model('tank_auth/ta_groups_users','ta_groups_users');
+		$this->ci->users = $this->ci->ta_groups_users;
     }
     
     /**
