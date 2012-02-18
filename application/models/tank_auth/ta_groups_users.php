@@ -7,6 +7,11 @@
  */
 class TA_Groups_Users extends Users {
     
+    function __construct()
+    {
+        parent::__construct();
+    }
+    
     /**
      * Set group_id for user.
      *
