@@ -55,7 +55,7 @@ class Tank_auth_groups extends Tank_auth {
 
 		if($loggedIn) 
 		{
-			$user = $this->ci->users->get_user_by_id($this->get_user_id());
+			$user = $this->ci->users->get_user_by_login($this->get_username());
 			$this->ci->session->set_userdata(array('group_id'	=> $user->group_id));
 		}
 				
